@@ -1,0 +1,46 @@
+ [
+    {
+      "name": "Wedding Planning",
+      "image": " https://i.ibb.co/z6ZXPTj/leonardo-miranda-dv-F6s1-H1x68-unsplash.jpg",
+      "price": "$2,500",
+      "description": "Let us make your dream wedding a reality. Our experienced team will take care of every detail.",
+      "buttonText": "Learn More"
+    },
+    {
+      "name": "Corporate Events",
+      "image": "https://i.ibb.co/WkZTg01/danny-howe-bn-D2b-Cvpik-unsplash.jpg",
+      "price": "$1,200",
+      "description": "Host successful corporate events with our professional planning and execution services.",
+      "buttonText": "Learn More"
+    },
+    {
+      "name": "Surprise Parties",
+      "image": "https://i.ibb.co/Sd0Sf6K/medium-shot-couple-celebrating-birthday.jpg",
+      "price": "$500",
+      "description": "Celebrate special moments with our customizable birthday party planning packages.",
+      "buttonText": "Learn More"
+    },
+    {
+      "name": "Änniversary",
+      "image": "https://i.ibb.co/4wbytGt/elegant-couple-spend-time-restaurant.jpg",
+      "price": "$3,000",
+      "description": "Plan and organize conferences that leave a lasting impression on attendees.",
+      "buttonText": "Learn More"
+    },
+    {
+      "name": "Baby Shower",
+      "image": "https://i.ibb.co/zR5SjwF/aboodi-vesakaran-ox-P3bl3x-QPI-unsplash.jpg",
+      "price": "$800",
+      "description": "Delicious catering options for all your events, from small gatherings to large banquets.",
+      "buttonText": "Learn More"
+    },
+    {
+      "name": "Bachelor Party",
+      "image": "https://i.ibb.co/DYr1Rnf/friends-having-2018-party.jpg",
+      "price": "$1,800",
+      "description": "Capture the moments that matter with our professional photography and videography services.",
+      "buttonText": "Learn More"
+    }
+  ]
+
+
