@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -14,7 +14,7 @@ const Services = () => {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="container px-6 py-10 mx-auto">
-              <h1 className="text-2xl font-bold text-center text-gray-800 capitalize lg:text-5xl dark:text-white py-8">
+        <h1 className="text-2xl font-bold text-center text-gray-800 capitalize lg:text-5xl dark:text-white py-8">
           Our Services
         </h1>
         <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
@@ -34,7 +34,8 @@ const Services = () => {
                 <p className="text-lg font-semibold text-gray-800 dark:text-white">
                   Price: {service.price}
                 </p>
-                <Link to={`/service/${index}`} className="btn btn-secondary text-white">{service.buttonText}
+                <Link to={`/service/${index}`} className="btn btn-secondary text-white">
+                  {service.buttonText}
                 </Link>
               </div>
             </div>
