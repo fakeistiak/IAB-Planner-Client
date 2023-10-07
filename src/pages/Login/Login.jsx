@@ -17,7 +17,7 @@ const Login = () => {
              <header className="bg-gray-900 pattern">
       <div className="container px-6 mx-auto">
 
-        <div className="flex flex-col items-center py-6 lg:h-[91vh] sm:h-screen lg:flex-row">
+        <div className="flex flex-col items-center py-6 lg:h-[42rem] sm:h-screen lg:flex-row">
           <div className="lg:w-1/2">
             <h3 className="mt-2 text-6xl font-bold text-gray-100">
               Hello <span className="text-pink-500">Guest</span><br/><span className="text-pink-500">Login</span> Now
