@@ -7,7 +7,7 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [ user, setUser] = useState(null);
     
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth,email,password);
@@ -18,10 +18,11 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, currentUser => {
-        console.log("user in the on state changed", currentUser)
-        setUser(currentUser);
-    });
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            console.log("user in the on state changed", currentUser)
+            setUser(currentUser);
+            console.log(currentUser)
+        });
         return () => {
             unSubscribe();
         }

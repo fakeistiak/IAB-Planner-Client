@@ -10,19 +10,19 @@ const Register = () => {
         e.preventDefault();
         console.log(e.currentTarget)
          const form = new FormData(e.currentTarget);
-         const email =form.get('email')
-         const name =form.get('name')
-         const photo =form.get('photo')
-         const birth =form.get('birth')
-         const password =form.get('password')
+       const email = form.get('email');
+       const name = form.get('name');
+       const photo = form.get('photo');
+       const birth = form.get('birth');
+       const password = form.get('password');
          console.log(email, password, name, photo, birth);
          
          createUser(email, password)
          .then(result => {
-             console.log(result.user);
+             console.log(result.user)
          })
              .catch(error => {
-                 console.error(error);
+                 console.error(error)
          })
 
     }

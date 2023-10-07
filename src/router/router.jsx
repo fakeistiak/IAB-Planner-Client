@@ -6,6 +6,8 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import Team from "../pages/Team/Team";
 import Register from "../pages/Register/Register";
 import Demo from "../pages/Demo/Demo";
+import PrivateRoute from "./PrivateRoute";
+import Details from "../pages/Home/Details/Details";
 
 
 
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/team",
-                element: <Team></Team>,
+                element: <PrivateRoute><Team></Team></PrivateRoute>,
             },
             {
                 path: "/register",
@@ -36,7 +38,12 @@ const router = createBrowserRouter([
             },
             {
                 path: "/demo",
-                element: <Demo></Demo>
+                element: <PrivateRoute><Demo></Demo></PrivateRoute>,
+            },
+            {
+                path: "/details/:id",
+                element: <Details></Details>,
+                loader: ()=>fetch("/services.json")
             }
         ]
     }

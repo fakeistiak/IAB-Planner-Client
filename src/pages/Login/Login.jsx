@@ -9,7 +9,8 @@ const Login = () => {
         const form = new FormData(e.currentTarget);
         console.log(form.get('password'));
 
-    }
+  }
+  
 
     return (
         <div>
