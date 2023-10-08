@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "../Shared/NavBar/Navbar";
+
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -29,7 +29,6 @@ const Register = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
             <header className="bg-gray-900 pattern">
       <div className="container px-6 mx-auto">
 

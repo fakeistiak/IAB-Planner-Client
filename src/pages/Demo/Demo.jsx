@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Reviews from '../Reviews/Reviews';
-import Navbar from '../Shared/NavBar/Navbar';
 import Footer from '../Shared/Footer/Footer';
 import Marquee from 'react-fast-marquee';
 
@@ -36,7 +35,6 @@ const Demo = () => {
 
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col justify-between">
-      <Navbar />
       <h1 className="text-white text-center text-4xl pb-12 font-bold">
         Our <span className="text-pink-500">Decorations</span> in <br /> Various Gatherings
       </h1>

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "../Shared/NavBar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTwitter,faFacebook,faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -15,7 +14,6 @@ const Team = () => {
   
   return (
     <>
-      <Navbar />
       <div className="px-20 bg-gray-900 ">
         <h1 className="text-5xl font-bold mb-4 text-center text-white pt-8 pb-8"><span className="text-pink-500">Executive</span> Team</h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">

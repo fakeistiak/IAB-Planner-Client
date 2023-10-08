@@ -1,20 +1,36 @@
-import { Link } from "react-router-dom";
-import Navbar from "../Shared/NavBar/Navbar";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("location is coming",location)
 
     const handleLogin = e => {
         e.preventDefault();
         console.log(e.currentTarget)
-        const form = new FormData(e.currentTarget);
-        console.log(form.get('password'));
+      const form = new FormData(e.currentTarget);
+      const email = form.get('email');
+      const password = form.get('password');
+      console.log(email, password);
+      signIn(email, password)
+        .then(result => {
+          console.log(result.user)
+          
+          navigate(location?.state ? location.state : '/');
 
+        })
+        .catch(error => {
+          console.error(error);
+      })
   }
   
 
     return (
         <div>
-            <Navbar></Navbar>
              <header className="bg-gray-900 pattern">
       <div className="container px-6 mx-auto">
 
