@@ -31,7 +31,7 @@ const Login = () => {
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log("location is coming",location)
+  console.log(location);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -39,17 +39,18 @@ const Login = () => {
       const form = new FormData(e.currentTarget);
       const email = form.get('email');
       const password = form.get('password');
-      console.log(email, password);
+      console.log(email, password,form);
       signIn(email, password)
         .then(result => {
           console.log(result.user);
-          
+           swal("Login Successful", "EXPLORE THE PAGE", "success");
           navigate(location?.state ? location.state : '/');
-
+          
         })
         .catch(error => {
-         swal("Login failed", "Check the information again", "error");
+         swal(error?.message);
           console.error(error);
+          
           return 
         })
   }

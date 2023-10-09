@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-
+import userImg from "../../../assets/user.png"
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext);
 
+  const { user, logOut } = useContext(AuthContext);
+  
+console.log(user?.displayName)
   const handleSignOut = () => {
     logOut()
       .then()
@@ -25,6 +27,10 @@ const Navbar = () => {
       <li>
         <NavLink to="/Demo">Demo</NavLink>
       </li>
+      <li>
+        <NavLink to="/services">Services</NavLink>
+      </li>
+      
     </>
   );
 
@@ -63,13 +69,20 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            {user && <img src={user?.photoURL} alt="User Avatar" />}
-          {user && <h1 className="text-2xl text-white">{user?.displayName}</h1>}
-
-          </div>
-        </label>
+       <label tabIndex={0}>
+            <div className="flex flex-col items-center p-2">
+              {user && (
+                <img
+                  className="w-10 avatar rounded-full"
+                  src={user?.photoURL || userImg}
+                  alt="User_avatar"
+                />
+              )}
+              <h1 className="text-lg text-white">
+                {user && user?.displayName}
+              </h1>
+            </div>
+          </label>
         {user ? (
           <button onClick={handleSignOut} className="btn btn-secondary text-white">
             Sign Out

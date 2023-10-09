@@ -9,6 +9,9 @@ import Demo from "../pages/Demo/Demo";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../pages/Home/Details/Details";
 import ErrorPage from "../ErrorPage/ErrrorPage";
+import Services from "../pages/Shared/Services/Services";
+import Form from "../pages/Form/Form";
+
 
 
 
@@ -43,10 +46,19 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><Demo></Demo></PrivateRoute>,
             },
             {
+                path: "/services",
+                element: <Services></Services>
+            },
+            {
                 path: "/details/:id",
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: ()=>fetch("/services.json")
+            },
+            {
+                path: "/form",
+                element: <Form></Form>
             }
+           
         ]
     }
 ]);

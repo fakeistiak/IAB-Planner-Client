@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Reviews from '../Reviews/Reviews';
 import Footer from '../Shared/Footer/Footer';
 import Marquee from 'react-fast-marquee';
+import Features from '../Features/features';
 
 const imageUrls = [
   'https://i.ibb.co/crpcsL4/jeremy-wong-weddings-K8-Ki-CHh4-WU4-unsplash.jpg',
@@ -34,6 +35,7 @@ const Demo = () => {
   }, []);
 
   return (
+    <>
     <div className="bg-gray-900 min-h-screen flex flex-col justify-between">
       <h1 className="text-white text-center text-4xl pb-12 font-bold">
         Our <span className="text-pink-500">Decorations</span> in <br /> Various Gatherings
@@ -61,9 +63,14 @@ const Demo = () => {
         ) : (
           <div className="text-white text-center">Loading images...</div>
         )}
-      </div>
+        </div>
+
+       <Features></Features>
+        
       <Footer />
-    </div>
+      </div>
+      
+    </>
   );
 };
 
