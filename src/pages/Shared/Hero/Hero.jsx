@@ -6,7 +6,8 @@ const Hero = () => {
   <div className="hero-content text-center">
     <div className="max-w-md">
                     <h1 className="text-5xl font-bold">Let's Decorate Your<span className="text-pink-500"> Special </span>Day</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <p className="py-6">"Crafting Unforgettable Experiences for Every Occasion" <br />
+                   "Turning Moments into Memories"</p>
                     <a><Link to="/Demo" className="btn btn-secondary text-white">Some of Our Work</Link></a>
     </div>
   </div>
