@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-import userImg from "../../../assets/user.png"
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
@@ -70,11 +69,11 @@ console.log(user?.displayName)
       </div>
       <div className="navbar-end">
        <label tabIndex={0}>
-            <div className="flex flex-col items-center p-2">
+            <div className="flex flex-col items-center p-2 ">
               {user && (
                 <img
-                  className="w-10 avatar rounded-full"
-                  src={user?.photoURL || userImg}
+                  className="w-10 h-10 avatar rounded-full object-cover"
+                  src={user?.photoURL}
                   alt="User_avatar"
                 />
               )}

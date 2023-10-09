@@ -1,27 +1,36 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
-const Register = () => {
+const Register =() => {
   
     const {createUser,updateUser} =useContext(AuthContext);
 const navigate = useNavigate()
      const handleRegister = e => {
        e.preventDefault();
        
-         const form = new FormData(e.currentTarget);
+       const form = new FormData(e.currentTarget);
        const email = form.get('email');
        const name = form.get('name');
        const photo = form.get('photo');
        const birth = form.get('birth');
        const password = form.get('password');
          console.log(email, password, name, photo, birth);
-         
+       
+if (password.length < 6 || !/[A-Z]/.test(password) || !/[!@#$%^&*]/.test(password)) {
+    toast.error("Password must be at least 6 characters long, contain a capital letter, and a special character.");
+    return;
+  }
+ 
+       
        createUser(email, password)
          .then(result => {
-           updateUser(name)
-             .then(console.log(result.user),
+            updateUser({name,photo})
+              .then(console.log(result.user),
+               toast.success("Sign up Successful"),
                navigate("/"),
+              
                window.location.reload());
 
             
@@ -60,7 +69,7 @@ const navigate = useNavigate()
                         <input className="block w-full px-4 py-2 mt-2 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" required type="date" name="birth" placeholder="Date Of Birth" aria-label="Email address" />
                                                 <p className="text-start text-lg pt-2">Image</p>
 
-                        <input className="block w-full px-4 py-2 mt-2 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" type="file" name="photo" placeholder="Image URL" />
+                        <input className="block w-full px-4 py-2 mt-2 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" type="text" name="photo" placeholder="Image URL" />
                                                 <p className="text-start text-lg pt-2">E-mail</p>
 
                         <input className="block w-full px-4 py-2 mt-2 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring" required type="email" name="email" placeholder="Email" />
