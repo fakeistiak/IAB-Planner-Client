@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import userDefaultPic from "../../../assets/user.png";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
@@ -24,7 +23,7 @@ const Navbar = () => {
         <NavLink to="/contact">Contact Us</NavLink>
       </li>
       <li>
-        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/Demo">Demo</NavLink>
       </li>
     </>
   );
@@ -66,7 +65,7 @@ const Navbar = () => {
       <div className="navbar-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            <img src={userDefaultPic} alt="User Avatar" />
+           {user && <img src={user?.photoURL}  />}
           </div>
         </label>
         {user ? (
@@ -75,7 +74,7 @@ const Navbar = () => {
           </button>
         ) : (
           <Link to="/login">
-            <button className="btn btn-secondary text-white">Login</button>
+            <button className="bg-secondary text-lg px-7 md:px-8 lg:px-6 text-center py-2 mt-3 font-medium text-white justify-center items-center cursor-pointer w-full block rounded-md">Login</button>
           </Link>
         )}
       </div>

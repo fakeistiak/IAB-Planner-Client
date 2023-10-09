@@ -1,4 +1,14 @@
+import Aos from "aos"
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 const Reviews = () => {
+
+
+useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, []);
+
+
     return (
         <>
             <div>
@@ -14,7 +24,7 @@ const Reviews = () => {
                         </p>
 
                         <section className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3">
-                            <div className="p-8 border rounded-lg dark:border-gray-700">
+                            <div className="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-left">
                                 <p className="leading-loose text-gray-500 dark:text-gray-400">
                                     “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus
                                     libero ad tempora doloribus expedita laborum saepe voluptas perferendis delectus
@@ -35,7 +45,7 @@ const Reviews = () => {
                                 </div>
                             </div>
 
-                            <div className="p-8 border rounded-lg dark:border-gray-700">
+                            <div className="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-right">
                                 <p className="leading-loose text-gray-500 dark:text-gray-400">
                                     “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus
                                     libero ad tempora doloribus expedita laborum saepe voluptas perferendis delectus
@@ -56,7 +66,7 @@ const Reviews = () => {
                                 </div>
                             </div>
 
-                            <div className="p-8 border rounded-lg dark:border-gray-700">
+                            <div className="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-down">
                                 <p className="leading-loose text-gray-500 dark:text-gray-400">
                                     “Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore quibusdam ducimus
                                     libero ad tempora doloribus expedita laborum saepe voluptas perferendis delectus

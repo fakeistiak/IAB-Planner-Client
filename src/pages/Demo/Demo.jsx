@@ -62,7 +62,6 @@ const Demo = () => {
           <div className="text-white text-center">Loading images...</div>
         )}
       </div>
-      <Reviews />
       <Footer />
     </div>
   );

@@ -1,9 +1,33 @@
-import { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import app from "../../firebase/firebase.config";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { text } from "@fortawesome/fontawesome-svg-core";
+import swal from 'sweetalert';
 
 
 const Login = () => {
+  const [ setUser] = useState(null);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then(result => {
+                  <Navigate to="/login"></Navigate>
+
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+
+      })
+      .catch(error => {
+        swal("Login Successful", "EXPLORE THE PAGE", "success");
+          console.error(error);
+          return  navigate(location?.state ? location.state : '/');
+      // console.error(error)
+    })
+ }
   const { signIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,14 +42,16 @@ const Login = () => {
       console.log(email, password);
       signIn(email, password)
         .then(result => {
-          console.log(result.user)
+          console.log(result.user);
           
           navigate(location?.state ? location.state : '/');
 
         })
         .catch(error => {
+         swal("Login failed", "Check the information again", "error");
           console.error(error);
-      })
+          return 
+        })
   }
   
 
@@ -60,7 +86,10 @@ const Login = () => {
 
                     <button className="btn btn-secondary text-white w-full">Login</button>
                   </div>
-                 </form>
+                    </form>
+                     <div className="flex items-center justify-between mt-4 pb-4">
+                    <button onClick={handleGoogleSignIn} className="btn btn-outline text-white w-full hover:bg-gray-600">Sign in with Google</button>
+                  </div>
                 <p className="text-sm text-white">Don't have an Account? <Link to="/register" className="text-blue-600 pl-2"> Register</Link></p>
               </div>
             </div>
