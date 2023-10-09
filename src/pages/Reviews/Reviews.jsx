@@ -8,7 +8,6 @@ useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
 
-
     return (
         <>
             <div>
