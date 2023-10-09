@@ -89,7 +89,7 @@ const Login = () => {
                   </div>
                     </form>
                      <div className="flex items-center justify-between mt-4 pb-4">
-                    <button onClick={handleGoogleSignIn} className="btn btn-outline text-white w-full hover:bg-gray-600">Sign in with Google</button>
+                    <button onClick={handleGoogleSignIn} className="btn btn-secondary text-white w-full hover:bg-gray-600">Sign in with Google</button>
                   </div>
                 <p className="text-sm text-white">Don't have an Account? <Link to="/register" className="text-blue-600 pl-2"> Register</Link></p>
               </div>

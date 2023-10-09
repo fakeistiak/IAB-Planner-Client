@@ -23,7 +23,7 @@ useEffect(() => {
                         </p>
 
                         <section className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 lg:grid-cols-2 xl:grid-cols-3">
-                            <div className="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-left">
+                            <div className="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-down">
                                 <p className="leading-loose text-gray-500 dark:text-gray-400">
                                     “The sweet sixteen celebration curated by IAB planner was nothing short of enchanting. Their meticulous attention to detail and boundless creativity transformed our vision into a captivating reality. The party resonated with energy, leaving the kids in sheer delight. What stood out the most was the stress-free experience they provided. Our daughter's milestone was marked by pure joy, and it was all possible due to the exceptional team at ”.
                                 </p>
@@ -61,7 +61,7 @@ useEffect(() => {
                                 </div>
                             </div>
 
-                            <div className="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-right">
+                            <div className="p-8 border rounded-lg dark:border-gray-700" data-aos="fade-down">
                                 <p className="leading-loose text-gray-500 dark:text-gray-400">
                                     “Our recent corporate event, expertly organized by [Marriage Organization Name], exceeded all expectations. Their professionalism and understanding of our brand were evident in every aspect of planning and execution. The event ran flawlessly, impressing our clients and partners. [Marriage Organization Name] allowed us to focus on our business while ensuring the event's success. Highly recommended for any corporate event, they are truly top-notch”.
                                 </p>
